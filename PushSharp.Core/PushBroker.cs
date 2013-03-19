@@ -50,6 +50,7 @@ namespace PushSharp
 
 			if (registeredServices.ContainsKey(pushNotificationType))
 				registeredServices[pushNotificationType].ForEach(pushService => pushService.QueueNotification(notification));
+<<<<<<< HEAD
 			else
 				throw new IndexOutOfRangeException("There are no Registered Services that handle this type of Notification");
 		}
@@ -62,6 +63,8 @@ namespace PushSharp
 				return registeredServices[type];
 
 			return null;
+=======
+>>>>>>> ioc-v2
 		}
 
 		public void StopAllServices(bool waitForQueuesToFinish = true)

@@ -325,6 +325,9 @@ namespace PushSharp.Apple
 					//See if anything is here to process
 					if (sentNotifications.Count > 0)
 					{
+						lock(connectLock)
+							Connect();
+
 						//Don't expire any notifications while we are in a connecting state, o rat least ensure all notifications have been sent
 						// in case we may have no connection because no notifications were causing a connection to be initiated
 						if (connected)
